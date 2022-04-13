@@ -3,10 +3,9 @@ package cn.rubintry.animate.core.listener.watcher
 import android.app.Activity
 import android.content.Context
 import android.view.View
-import android.widget.TextView
 import cn.rubintry.animate.AnimateUtils
 import cn.rubintry.animate.core.IAnimatorInterface
-import cn.rubintry.animate.core.doOnEnd
+import cn.rubintry.animate.core.ext.doOnEnd
 import cn.rubintry.animate.core.listener.OnAllCompleteListener
 import java.lang.ref.WeakReference
 import java.util.concurrent.*
@@ -104,8 +103,11 @@ class AnimatorWatcher(context: Context) {
         }
     }
 
-
-
+    /**
+     * 监听器线程
+     *
+     * @property animator
+     */
     inner class AnimatorWatcherImpl(private val animator: IAnimatorInterface) : Runnable{
         override fun run() {
             animator.doOnEnd {
@@ -120,6 +122,12 @@ class AnimatorWatcher(context: Context) {
         }
     }
 
+
+    /**
+     * 视图查找线程
+     *
+     * @property context activity所对应的context
+     */
     inner class FinderRunnable(private val context: Context?) : Runnable{
         override fun run() {
             val targetList = findTargetFromContext(context)

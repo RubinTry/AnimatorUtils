@@ -6,6 +6,7 @@ import android.os.Build
 import android.view.View
 import android.view.animation.Interpolator
 import androidx.annotation.RequiresApi
+import cn.rubintry.animate.core.ext.doOnEnd
 
 import cn.rubintry.animate.core.listener.OnAnimationListener
 

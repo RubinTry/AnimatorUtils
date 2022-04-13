@@ -1,6 +1,7 @@
-package cn.rubintry.animate.core
+package cn.rubintry.animate.core.ext
 
 import android.animation.Animator
+import cn.rubintry.animate.core.IAnimatorInterface
 
 import cn.rubintry.animate.core.listener.OnAnimationListener
 

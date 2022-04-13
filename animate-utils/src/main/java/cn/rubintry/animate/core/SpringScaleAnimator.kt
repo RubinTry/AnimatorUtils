@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.view.View
 import android.view.animation.Interpolator
+import cn.rubintry.animate.core.ext.doOnEnd
 
 import cn.rubintry.animate.core.interpolator.SpringScalingInterpolator
 import cn.rubintry.animate.core.listener.OnAnimationListener

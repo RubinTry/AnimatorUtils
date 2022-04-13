@@ -24,16 +24,19 @@ class MainActivity : AppCompatActivity() {
         AnimateUtils.with(tvTest)
             .scale(1.0f , 2.0f , true)
             .setDuration(400)
+            .enableLoop(true)
             .start()
 
         AnimateUtils.with(tvTest2)
             .translation(0f , 100f , true)
             .setDuration(400)
+            .enableLoop(true)
             .start()
 
         AnimateUtils.with(tvTest3)
             .rotate(90f ,  true)
             .setDuration(400)
+            .enableLoop(true)
             .start()
 
 
@@ -61,10 +64,6 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 index ++
-            }else{
-//                AnimateUtils.with(tvTest).getAnimator()?.start()
-//                AnimateUtils.with(tvTest2).getAnimator()?.start()
-//                AnimateUtils.with(tvTest3).getAnimator()?.start()
             }
         }
     }
