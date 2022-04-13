@@ -51,6 +51,10 @@ final class RotateAnimator(view : View?, angle: Float, val reverse: Boolean) : B
         set.cancel()
     }
 
+    override fun onActivityStop() {
+        set.cancel()
+    }
+
     override fun onActivityResume() {
         set.resume()
     }
@@ -61,9 +65,14 @@ final class RotateAnimator(view : View?, angle: Float, val reverse: Boolean) : B
 
     override fun enableLoop(loop: Boolean): IAnimatorInterface {
         if(loop){
+            this.loop = true
             allRepeatInfinity()
         }
         return this
+    }
+
+    override fun isLoop(): Boolean {
+        return loop
     }
 
 
@@ -82,7 +91,7 @@ final class RotateAnimator(view : View?, angle: Float, val reverse: Boolean) : B
     }
 
 
-    override fun start() : IAnimatorInterface {
+    override fun start() {
         set.start()
         set.doOnEnd {
             if(isDestroy){
@@ -98,7 +107,6 @@ final class RotateAnimator(view : View?, angle: Float, val reverse: Boolean) : B
                 listener.onEnd()
             }
         }
-        return this
     }
 
     override fun setDuration(duration: Long): IAnimatorInterface {

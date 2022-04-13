@@ -56,6 +56,10 @@ class AlphaAnimator(view: View? , from: Float , to: Float , reverse: Boolean) : 
         cancel()
     }
 
+    override fun onActivityStop() {
+        cancel()
+    }
+
     override fun onActivityResume() {
         set.resume()
     }
@@ -65,8 +69,15 @@ class AlphaAnimator(view: View? , from: Float , to: Float , reverse: Boolean) : 
     }
 
     override fun enableLoop(loop: Boolean): IAnimatorInterface {
-        allRepeatInfinity()
+        this.loop = loop
+        if(loop){
+            allRepeatInfinity()
+        }
         return this
+    }
+
+    override fun isLoop(): Boolean {
+        return loop
     }
 
 
@@ -85,7 +96,7 @@ class AlphaAnimator(view: View? , from: Float , to: Float , reverse: Boolean) : 
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    override fun start() : IAnimatorInterface {
+    override fun start() {
         set.start()
         set.doOnEnd {
             if(isDestroy){
@@ -101,7 +112,6 @@ class AlphaAnimator(view: View? , from: Float , to: Float , reverse: Boolean) : 
                 listener.onEnd()
             }
         }
-        return this
     }
 
 

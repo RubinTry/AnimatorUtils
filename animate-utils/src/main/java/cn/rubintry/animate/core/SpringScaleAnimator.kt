@@ -51,6 +51,10 @@ final class SpringScaleAnimator(view: View? , from: Float , to: Float , factor: 
         cancel()
     }
 
+    override fun onActivityStop() {
+        cancel()
+    }
+
     override fun onActivityResume() {
         set.resume()
     }
@@ -67,10 +71,15 @@ final class SpringScaleAnimator(view: View? , from: Float , to: Float , factor: 
      * @return
      */
     override fun enableLoop(loop: Boolean): IAnimatorInterface {
+        this.loop = loop
         if(loop){
             allRepeatInfinity()
         }
         return this
+    }
+
+    override fun isLoop(): Boolean {
+        return loop
     }
 
     /**
@@ -105,9 +114,9 @@ final class SpringScaleAnimator(view: View? , from: Float , to: Float , factor: 
      *
      * @return
      */
-    override fun start() : IAnimatorInterface {
+    override fun start() {
         if(isDestroy){
-            return this
+            return
         }
         set.start()
         set.doOnEnd {
@@ -124,7 +133,6 @@ final class SpringScaleAnimator(view: View? , from: Float , to: Float , factor: 
                 listener.onEnd()
             }
         }
-        return this
     }
 
 

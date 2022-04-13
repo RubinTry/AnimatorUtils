@@ -53,6 +53,10 @@ final class TranslationAnimator(view : View?,  x: Float,  y: Float, val reverse:
         cancel()
     }
 
+    override fun onActivityStop() {
+        cancel()
+    }
+
     override fun onActivityResume() {
         set.resume()
     }
@@ -101,10 +105,15 @@ final class TranslationAnimator(view : View?,  x: Float,  y: Float, val reverse:
      * @return
      */
     override fun enableLoop(loop: Boolean): IAnimatorInterface {
+        this.loop = loop
         if(loop){
             allRepeatInfinity()
         }
         return this
+    }
+
+    override fun isLoop(): Boolean {
+        return loop
     }
 
 
@@ -140,7 +149,7 @@ final class TranslationAnimator(view : View?,  x: Float,  y: Float, val reverse:
      *
      * @return
      */
-    override fun start() : IAnimatorInterface {
+    override fun start() {
         set.start()
         set.doOnEnd {
             if(isDestroy){
@@ -157,7 +166,6 @@ final class TranslationAnimator(view : View?,  x: Float,  y: Float, val reverse:
             }
         }
 
-        return this
     }
 
 

@@ -19,6 +19,7 @@ abstract class BaseAnimator(val view : View?) {
     protected var listeners: ArrayList<OnAnimationListener> = arrayListOf()
     protected var finished = false
     protected var set: AnimatorSet = AnimatorSet()
+    protected var loop = false
 
     init {
         val context = view?.context
@@ -40,6 +41,11 @@ abstract class BaseAnimator(val view : View?) {
                         Lifecycle.Event.ON_RESUME -> {
                             onActivityResume()
                         }
+
+                        Lifecycle.Event.ON_STOP -> {
+
+                        }
+
                         else -> {
 
                         }
@@ -55,6 +61,13 @@ abstract class BaseAnimator(val view : View?) {
      *
      */
     abstract fun onActivityDestroyed()
+
+
+    /**
+     * 生命周期方法，Activity在onStop的时候自动调用
+     *
+     */
+    abstract fun onActivityStop()
 
 
     /**

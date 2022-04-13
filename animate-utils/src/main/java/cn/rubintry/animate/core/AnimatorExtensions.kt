@@ -5,6 +5,12 @@ import android.animation.Animator
 import cn.rubintry.animate.core.listener.OnAnimationListener
 
 
+/**
+ * 对[OnAnimationListener]进行简单的扩展
+ *
+ * @param action
+ * @return
+ */
 inline fun IAnimatorInterface.doOnEnd(crossinline action: () -> Unit) = addListeners(onEnd = action)
 
 inline fun IAnimatorInterface.addListeners(crossinline onEnd: () -> Unit = {}) : OnAnimationListener {
@@ -16,6 +22,12 @@ inline fun IAnimatorInterface.addListeners(crossinline onEnd: () -> Unit = {}) :
 }
 
 
+/**
+ * 对[Animator.AnimatorListener]进行简单的扩展
+ *
+ * @param action
+ * @return
+ */
 inline fun Animator.doOnEnd(crossinline action: (animator: Animator) -> Unit) = addListener(onEnd = action)
 
 inline fun Animator.addListener(

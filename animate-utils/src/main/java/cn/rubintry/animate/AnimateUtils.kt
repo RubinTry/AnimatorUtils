@@ -1,5 +1,6 @@
 package cn.rubintry.animate
 
+import android.content.Context
 import android.view.View
 import androidx.annotation.FloatRange
 import cn.rubintry.animate.core.*
@@ -22,7 +23,6 @@ class AnimateUtils private constructor(view: View?) {
     private val weakView = WeakReference(view)
 
 
-
     companion object{
 
         /**
@@ -38,15 +38,13 @@ class AnimateUtils private constructor(view: View?) {
 
 
         /**
-         * 批量监听多个动画是否都已完成
+         * 监听当前activity所有view的动画是否播放完成
          * @param animators
          * @return
          */
         @JvmStatic
-        fun watch(vararg animators: IAnimatorInterface) : AnimatorWatcher {
-            val watcher = AnimatorWatcher()
-            watcher.put(*animators)
-            return watcher
+        fun watch(context: Context): AnimatorWatcher {
+            return AnimatorWatcher(context)
         }
 
     }
@@ -65,7 +63,7 @@ class AnimateUtils private constructor(view: View?) {
 
 
     /**
-     * 判断当前view对应的动画是否正在播放
+     * 判断当前view是否有动画正在播放
      *
      * @return
      */
@@ -75,11 +73,20 @@ class AnimateUtils private constructor(view: View?) {
 
 
     /**
+     * 当前视图是否含有[IAnimatorInterface]动画
+     *
+     * @return
+     */
+    fun hasAnimator() : Boolean{
+        return null != getAnimator()
+    }
+
+    /**
      * 获取当前view的动画
      *
      * @return
      */
-    fun getAnimator() : IAnimatorInterface? {
+    internal fun getAnimator() : IAnimatorInterface? {
         return AnimatorCache.getInstance().get(weakView.get())
     }
 
@@ -87,8 +94,8 @@ class AnimateUtils private constructor(view: View?) {
     /**
      * 自定义动画接口
      *
-     * @param T 动画具体实现类
-     * @param customAnimator 实现类的class
+     * @param T 动画具体实现类的类型 ， 必须是[IAnimatorInterface]的子类
+     * @param customAnimator 动画实现类，决定动画的具体样子
      * @return
      */
     fun <T : IAnimatorInterface> asCustom(customAnimator: Class<T>) : T{

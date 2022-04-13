@@ -54,6 +54,10 @@ final class ScaleAnimator(view: View? , from: Float , to: Float , reverse: Boole
         cancel()
     }
 
+    override fun onActivityStop() {
+        cancel()
+    }
+
     override fun onActivityResume() {
         set.resume()
     }
@@ -63,10 +67,15 @@ final class ScaleAnimator(view: View? , from: Float , to: Float , reverse: Boole
     }
 
     override fun enableLoop(loop: Boolean): IAnimatorInterface {
+        this.loop = loop
         if(loop){
             allRepeatInfinity()
         }
         return this
+    }
+
+    override fun isLoop(): Boolean {
+        return loop
     }
 
 
@@ -92,7 +101,7 @@ final class ScaleAnimator(view: View? , from: Float , to: Float , reverse: Boole
 
 
     @RequiresApi(Build.VERSION_CODES.O)
-    override fun start() : IAnimatorInterface {
+    override fun start() {
         set.start()
         set.doOnEnd {
             if(isDestroy){
@@ -107,32 +116,7 @@ final class ScaleAnimator(view: View? , from: Float , to: Float , reverse: Boole
             listeners.forEach { listener ->
                 listener.onEnd()
             }
-//            if(reverse){
-//                if(!reversed){
-//                    set.reverse()
-//                }else{
-//                    if(loop){
-//                        set.start()
-//                    }else{
-//                        finished = true
-//                        listeners.forEach { listener ->
-//                            listener.onEnd()
-//                        }
-//                    }
-//                }
-//                reversed = !reversed
-//            }else{
-//                if(loop){
-//                    set.start()
-//                }else{
-//                    finished = true
-//                    listeners.forEach { listener ->
-//                        listener.onEnd()
-//                    }
-//                }
-//            }
         }
-        return this
     }
 
     override fun setDuration(duration: Long): IAnimatorInterface {

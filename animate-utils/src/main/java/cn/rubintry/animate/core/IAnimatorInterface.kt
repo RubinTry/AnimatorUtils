@@ -21,12 +21,19 @@ interface IAnimatorInterface {
      */
     fun enableLoop(loop: Boolean) : IAnimatorInterface
 
+    /**
+     * 是否开启无限循环
+     *
+     * @return
+     */
+    fun isLoop() : Boolean
+
 
     /**
      * 开始播放
      *
      */
-    fun start() : IAnimatorInterface
+    fun start()
 
 
 
