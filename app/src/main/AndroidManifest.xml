@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnimatorUtils">
         <activity
+            android:name=".MultiAnimationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScaleActivity"
+            android:exported="false" />
+        <activity
             android:name=".TranslationActivity"
             android:exported="false" />
         <activity

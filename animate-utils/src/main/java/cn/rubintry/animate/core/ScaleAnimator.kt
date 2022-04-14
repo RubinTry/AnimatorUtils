@@ -55,10 +55,6 @@ final class ScaleAnimator(view: View? , from: Float , to: Float , reverse: Boole
         cancel()
     }
 
-    override fun onActivityStop() {
-        cancel()
-    }
-
     override fun onActivityResume() {
         set.resume()
     }

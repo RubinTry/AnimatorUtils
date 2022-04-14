@@ -57,9 +57,6 @@ class AlphaAnimator(view: View? , from: Float , to: Float , reverse: Boolean) : 
         cancel()
     }
 
-    override fun onActivityStop() {
-        cancel()
-    }
 
     override fun onActivityResume() {
         set.resume()

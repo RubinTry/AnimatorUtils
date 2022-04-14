@@ -21,4 +21,29 @@
         android:background="#f2f2f2"/>
 
 
+    <TextView
+        android:id="@+id/tv_scale"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="缩放动画"
+        android:textSize="20sp"
+        android:textColor="#222222"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#f2f2f2"/>
+
+
+    <TextView
+        android:id="@+id/tv_multi_ani"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="多动画同时播放"
+        android:textSize="20sp"
+        android:textColor="#222222"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#f2f2f2"/>
+
 </LinearLayout>

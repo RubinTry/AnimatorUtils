@@ -62,6 +62,10 @@ class AnimateUtils private constructor(view: View?) {
     }
 
 
+    /**
+     * 重置，将当前视图恢复到初始位置、大小、角度、透明度
+     *
+     */
     fun reset(){
         weakView.get()?.let {
             AnimatorCache.getInstance().get(it)?.reset()

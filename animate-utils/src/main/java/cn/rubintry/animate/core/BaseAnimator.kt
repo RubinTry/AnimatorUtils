@@ -34,7 +34,6 @@ abstract class BaseAnimator(val view : View?) {
 
                         Lifecycle.Event.ON_DESTROY -> {
                             onActivityDestroyed()
-                            AnimatorCache.getInstance().get(view)?.cancel()
                             AnimatorCache.getInstance().remove(view)
                         }
 
@@ -42,9 +41,6 @@ abstract class BaseAnimator(val view : View?) {
                             onActivityResume()
                         }
 
-                        Lifecycle.Event.ON_STOP -> {
-                            onActivityStop()
-                        }
 
                         else -> {
 
@@ -63,11 +59,6 @@ abstract class BaseAnimator(val view : View?) {
     abstract fun onActivityDestroyed()
 
 
-    /**
-     * 生命周期方法，Activity在onStop的时候自动调用
-     *
-     */
-    abstract fun onActivityStop()
 
 
     /**

@@ -52,9 +52,6 @@ final class SpringScaleAnimator(view: View? , from: Float , to: Float , factor: 
         cancel()
     }
 
-    override fun onActivityStop() {
-        cancel()
-    }
 
     override fun onActivityResume() {
         set.resume()

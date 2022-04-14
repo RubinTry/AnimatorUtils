@@ -52,9 +52,6 @@ final class RotateAnimator(view : View?, angle: Float, val reverse: Boolean) : B
         set.cancel()
     }
 
-    override fun onActivityStop() {
-        set.cancel()
-    }
 
     override fun onActivityResume() {
         set.resume()

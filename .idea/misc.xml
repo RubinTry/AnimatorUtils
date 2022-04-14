@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/demo/AnimatorUtils/app/src/main/res/drawable/bg_card.xml" value="0.1535" />
         <entry key="..\:/demo/AnimatorUtils/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/demo/AnimatorUtils/app/src/main/res/layout/activity_multi_animation.xml" value="0.14375" />
+        <entry key="..\:/demo/AnimatorUtils/app/src/main/res/layout/activity_scale.xml" value="0.21" />
         <entry key="..\:/demo/AnimatorUtils/app/src/main/res/layout/activity_translation.xml" value="0.24635416666666668" />
+        <entry key="..\:/demo/AnimatorUtils/app/src/main/res/layout/item_card.xml" value="0.14375" />
       </map>
     </option>
   </component>

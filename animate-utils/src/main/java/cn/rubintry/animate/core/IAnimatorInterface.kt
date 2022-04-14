@@ -37,7 +37,7 @@ interface IAnimatorInterface {
 
 
     /**
-     * 重置，恢复为初始状态
+     * 重置，将当前视图恢复到初始位置、大小、角度、透明度
      *
      */
     fun reset()

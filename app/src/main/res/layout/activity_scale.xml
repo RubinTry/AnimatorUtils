@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TranslationActivity">
+
+    <EditText
+        android:id="@+id/edt_scale"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="缩放倍数"
+        android:inputType="number"
+        android:textSize="15sp"
+        android:textColorHint="#999999"
+        android:textColor="#222222" />
+
+
+
+    <EditText
+        android:id="@+id/edt_scale_duration"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="单次缩放的时间"
+        android:inputType="number"
+        android:textSize="15sp"
+        android:textColorHint="#999999"
+        android:textColor="#222222" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="是否开启循环" />
+
+    <RadioGroup
+        android:id="@+id/rdg_loop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdg_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是" />
+
+        <RadioButton
+            android:id="@+id/rdg_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="否"
+            android:checked="true"/>
+    </RadioGroup>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="单次播放完后是否需要迂回" />
+
+    <RadioGroup
+        android:id="@+id/rdg_need_reverse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdg__reverse_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是" />
+
+        <RadioButton
+            android:id="@+id/rdg__reverse_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="否"
+            android:checked="true"/>
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始播放" />
+
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重置" />
+
+
+    <TextView
+        android:id="@+id/tv_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#666666"
+        android:text="我是被移动的文字" />
+</LinearLayout>
