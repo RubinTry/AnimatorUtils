@@ -1,5 +1,6 @@
 package cn.rubintry.animatorutils.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,6 +42,7 @@ class CardAdapter(private var dataList: MutableList<Card>) : RecyclerView.Adapte
         return dataList.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(dataList: MutableList<Card>) {
         this.dataList = dataList
         notifyDataSetChanged()

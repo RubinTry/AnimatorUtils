@@ -26,9 +26,7 @@ class ScaleActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scale)
-
         title = "缩放动画"
-
         tvMove = findViewById(R.id.tv_move)
         edtScale = findViewById(R.id.edt_scale)
         edtScaleDuration = findViewById(R.id.edt_scale_duration)

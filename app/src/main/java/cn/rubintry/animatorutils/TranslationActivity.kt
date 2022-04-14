@@ -28,7 +28,6 @@ class TranslationActivity : AppCompatActivity(), View.OnClickListener,
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_translation)
         title = "偏移动画"
-
         tvMove = findViewById(R.id.tv_move)
         edtOffsetX = findViewById(R.id.edt_offset_x)
         edtOffsetY = findViewById(R.id.edt_offset_y)
