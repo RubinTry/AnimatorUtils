@@ -138,7 +138,7 @@ final class ScaleAnimator(view: View? , from: Float , to: Float , reverse: Boole
     }
 
     override fun addListener(listener: OnAnimationListener) : IAnimatorInterface {
-        this.listeners?.add(listener)
+        this.listeners.add(listener)
         return this
     }
 
