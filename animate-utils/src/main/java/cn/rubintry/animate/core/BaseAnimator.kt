@@ -43,7 +43,7 @@ abstract class BaseAnimator(val view : View?) {
                         }
 
                         Lifecycle.Event.ON_STOP -> {
-
+                            onActivityStop()
                         }
 
                         else -> {

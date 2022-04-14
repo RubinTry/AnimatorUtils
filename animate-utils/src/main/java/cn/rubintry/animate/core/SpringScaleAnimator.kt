@@ -136,6 +136,14 @@ final class SpringScaleAnimator(view: View? , from: Float , to: Float , factor: 
         }
     }
 
+    override fun reset() {
+        if(isRunning()){
+            throw IllegalStateException("请先停止动画")
+        }
+        view?.scaleX = 1.0f
+        view?.scaleY = 1.0f
+    }
+
 
     /**
      * 播放时长

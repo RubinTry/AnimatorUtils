@@ -110,6 +110,13 @@ final class RotateAnimator(view : View?, angle: Float, val reverse: Boolean) : B
         }
     }
 
+    override fun reset() {
+        if(isRunning()){
+            throw IllegalStateException("请先停止动画")
+        }
+        view?.rotation = 0f
+    }
+
     override fun setDuration(duration: Long): IAnimatorInterface {
         set.duration = duration
         return this

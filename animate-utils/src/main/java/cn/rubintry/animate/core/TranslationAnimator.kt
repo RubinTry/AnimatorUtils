@@ -169,6 +169,14 @@ final class TranslationAnimator(view : View?,  x: Float,  y: Float, val reverse:
 
     }
 
+    override fun reset() {
+        if(isRunning()){
+            throw IllegalStateException("请先停止动画")
+        }
+        view?.translationX = 0.0f
+        view?.translationY = 0.0f
+    }
+
 
     /**
      * 取消播放

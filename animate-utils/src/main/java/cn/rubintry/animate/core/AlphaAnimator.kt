@@ -115,6 +115,13 @@ class AlphaAnimator(view: View? , from: Float , to: Float , reverse: Boolean) : 
         }
     }
 
+    override fun reset() {
+        if(isRunning()){
+            throw IllegalStateException("请先停止动画")
+        }
+        view?.alpha = 1.0f
+    }
+
 
     override fun setDuration(duration: Long): IAnimatorInterface {
         set.duration = duration

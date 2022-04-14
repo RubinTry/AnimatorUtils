@@ -57,6 +57,14 @@ class AnimateUtils private constructor(view: View?) {
     fun cancel(){
         weakView.get()?.let {
             AnimatorCache.getInstance().get(it)?.cancel()
+            it.clearAnimation()
+        }
+    }
+
+
+    fun reset(){
+        weakView.get()?.let {
+            AnimatorCache.getInstance().get(it)?.reset()
             AnimatorCache.getInstance().remove(it)
         }
     }
@@ -94,8 +102,9 @@ class AnimateUtils private constructor(view: View?) {
     /**
      * 自定义动画接口
      *
-     * @param T 动画具体实现类的类型 ， 必须是[IAnimatorInterface]的子类
-     * @param customAnimator 动画实现类，决定动画的具体样子
+     * @param T 动画具体实现类
+     * @param customAnimator 实现类的class
+     * 案例：用[AnimateUtils.with]获取到view所绑定的AnimateUtils，再用[AnimateUtils.asCustom]方法进行自定义动画
      * @return
      */
     fun <T : IAnimatorInterface> asCustom(customAnimator: Class<T>) : T{

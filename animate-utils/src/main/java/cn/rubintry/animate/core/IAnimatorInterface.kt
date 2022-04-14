@@ -36,6 +36,12 @@ interface IAnimatorInterface {
     fun start()
 
 
+    /**
+     * 重置，恢复为初始状态
+     *
+     */
+    fun reset()
+
 
     /**
      * 单次播放时长

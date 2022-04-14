@@ -120,6 +120,14 @@ final class ScaleAnimator(view: View? , from: Float , to: Float , reverse: Boole
         }
     }
 
+    override fun reset() {
+        if(isRunning()){
+            throw IllegalStateException("请先停止动画")
+        }
+        view?.scaleX = 1.0f
+        view?.scaleY = 1.0f
+    }
+
     override fun setDuration(duration: Long): IAnimatorInterface {
         set.duration = duration
         return this

@@ -48,7 +48,7 @@ class AnimatorWatcher(context: Context) {
 
 
     /**
-     * 从当前activity中查找已带有[IAnimatorInterface]动画的view
+     * 筛选出实现了[IAnimatorInterface]接口的View，开启循环的除外
      *
      * @param context 当前activity或activity对应的上下文
      * @return
@@ -133,6 +133,5 @@ class AnimatorWatcher(context: Context) {
             val targetList = findTargetFromContext(context)
             put(*targetList.toTypedArray())
         }
-
     }
 }
