@@ -1,0 +1,17 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:cn.rubintry.animate.core.listener.watcher/AnimatorWatcher.AnimatorWatcherImpl///PointingToDeclaration/cn/rubintry/animate/core/listener/watcher/AnimatorWatcher.AnimatorWatcherImpl.html
+$dokka.location:cn.rubintry.animate.core.listener.watcher/AnimatorWatcher.FinderRunnable///PointingToDeclaration/cn/rubintry/animate/core/listener/watcher/AnimatorWatcher.FinderRunnable.html
+$dokka.location:cn.rubintry.animate.core/AlphaAnimator.Companion///PointingToDeclaration/cn/rubintry/animate/core/AlphaAnimator.Companion.html
+$dokka.location:cn.rubintry.animate.core/RotateAnimator.Companion///PointingToDeclaration/cn/rubintry/animate/core/RotateAnimator.Companion.html
+$dokka.location:cn.rubintry.animate.core/ScaleAnimator.Companion///PointingToDeclaration/cn/rubintry/animate/core/ScaleAnimator.Companion.html
+$dokka.location:cn.rubintry.animate.core/SpringScaleAnimator.Companion///PointingToDeclaration/cn/rubintry/animate/core/SpringScaleAnimator.Companion.html
+$dokka.location:cn.rubintry.animate.core/TranslationAnimator.Companion///PointingToDeclaration/cn/rubintry/animate/core/TranslationAnimator.Companion.html
+$dokka.location:cn.rubintry.animate/AnimateUtils.Companion///PointingToDeclaration/cn/rubintry/animate/AnimateUtils.Companion.html
+cn.rubintry.animate
+cn.rubintry.animate.core
+cn.rubintry.animate.core.ext
+cn.rubintry.animate.core.interpolator
+cn.rubintry.animate.core.listener
+cn.rubintry.animate.core.listener.watcher
+

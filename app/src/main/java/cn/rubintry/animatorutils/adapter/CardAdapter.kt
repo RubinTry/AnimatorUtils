@@ -51,14 +51,13 @@ class CardAdapter(private var dataList: MutableList<Card>) : RecyclerView.Adapte
     }
 
     fun cancelNext() {
-        try {
-            val card = dataList[index]
-            card.canRotate = false
-            notifyItemChanged(index)
-            index ++
-        }catch (e : Exception){
-
+        if(index >= dataList.size){
+            return
         }
+        val card = dataList[index]
+        card.canRotate = false
+        notifyItemChanged(index)
+        index ++
     }
 
     inner class CardViewHolder(view: View) : RecyclerView.ViewHolder(view){
