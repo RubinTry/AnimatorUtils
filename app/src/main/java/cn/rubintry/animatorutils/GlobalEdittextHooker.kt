@@ -68,7 +68,7 @@ class GlobalEdittextHooker {
             while (viewIterator.hasNext()){
                 val targetNode = viewIterator.next()
                 if(targetNode !is EditText){
-                    //已有OnClickListener???不慌，咱把它的mOnClickListener给hook出来，执行完咱的代码再执行它的
+                    //已有OnClickListener???不慌，咱把它的mOnClickListener给hook出来，执行完它的代码再执行咱的
                     if(targetNode.hasOnClickListeners()){
                         val listener = hookOnClickListeners(targetNode)
                         targetNode.setOnClickListener {
